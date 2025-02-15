@@ -42,7 +42,7 @@ client.on('message', async (msg) => {
 
     
     
-if (msg.body >= 0 && msg.body <= 9) {
+if (msg.body > 0 && msg.body <= 9) {
             // Si el número está en el rango de 1 a 9, continuar con el menú
             const chat = await msg.getChat();
             await delay(5000);
@@ -59,8 +59,9 @@ if (msg.body >= 0 && msg.body <= 9) {
         await client.sendMessage(msg.from, ' Moto categoría A2 🛵\n📝Teoría:28 horas\n🛵Prácticas: 15 horas\nIncluye:\n✅certificado de conducción\n✅Examen médico\n❌No incluye derechos de tránsito (plástico-lamina) cada persona decide en qué parte del Quindío le conviene imprimir su lámina. El valor puede ser de $80 mil a $90 mil depende de cada sede de tránsito.\n💰💳 Precio publico ~$910.00~\nPara ti: 😍🎁 $850.000 🎁🎁🎁  hasta el 31 de diciembre\n*Proceso de inscripcion:\n⏰Horario:\nLunes a viernes de 8:00 am a 6:30 pm (jornada continua)\nSábado de 8:00 am a 1:30 pm\n👆🏼Proceso presencial personal\nContar con 25 minutos para la realizacion del proceso de registro, documento de identidad original y el respectivo pago.');
         await chat.sendStateTyping();
         await delay(5000);
-        await client.sendMessage(msg.from, 'Si tienes otra pregunta digita otro número según la opción deseada, o escribe AYUDA para que una persona pueda atenderte.');
-
+        await client.sendMessage(msg.from, 'Si tienes otra pregunta digita otro número según la opción deseada, o escribe AYUDA para que una persona pueda atenderte.' +
+          '😎\n\nElige uno de los numeros del menu:\n\n1- Curso de conduccion de motocicleta.\n2- Curso de conduccion de automovil particular.\n3-*Doble Curso de conduccion de motocicleta y automovil*\n4- Curso de conduccion de automovil publico.\n5- Refrendacion licencia.\n6- Horarios.\n7- Formas de pago.\n8- Ubicacion\n*9Me intereza ¿cual es el paso a seguir?*\n0- AYUDA');
+        
       }
       
      if (msg.body !== null && msg.body === '2' && msg.from.endsWith('@c.us')) {
